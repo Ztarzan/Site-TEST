@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Mon site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon site</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header>
-		<h1>Bienvenue sur mon site</h1>
-	</header>
+    <header>
+        <h1>Bienvenue sur mon site</h1>
+    </header>
 
-	<main>
-		<p>Ceci est une page web de base.</p>
-	</main>
+    <main>
+        <p>Ceci est une page web de base.</p>
+        
+        <!-- Le code d'accès est inséré ici -->
+        <div id="acces-documents">
+            <h3>Accès aux documents élèves</h3>
+            <input type="text" id="codeAcces" placeholder="Entrez votre code d'accès">
+            <button onclick="accederFichier()">Valider</button>
+        </div>
+    </main>
+
+    <!-- Le script logique est inséré ici -->
+    <script>
+    function accederFichier() {
+        const code = document.getElementById("codeAcces").value.trim();
+        if (code) {
+            window.location.href = "./pdf/QCM Proba" + code + ".pdf";
+        }
+    }
+    </script>
 </body>
 </html>
+
+
