@@ -103,3 +103,36 @@ body {
     0%, 10% { transform: rotateY(0deg); }
     90%, 100% { transform: rotateY(-170deg); }
 }
+
+.presentation-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.texte-presentation { width: 50%; }
+.texte-presentation h1 { font-size: 3.5em; margin-bottom: 10px; text-transform: uppercase; }
+.sous-titre { font-size: 1.2em; color: #ccc; margin-bottom: 25px; }
+.boutons { display: flex; gap: 15px; margin-top: 30px; }
+
+.btn-vert {
+    background-color: #00ff66;
+    color: black;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.btn-contour {
+    background-color: transparent;
+    color: #00ff66;
+    border: 2px solid #00ff66;
+    padding: 10px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
