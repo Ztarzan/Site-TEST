@@ -253,3 +253,9 @@ body {
         margin-top: 20px;
     }
 }
+
+.p1 .contenu-page, 
+.p2 .contenu-page, 
+.p3 .contenu-page {
+    transform: rotateY(180deg);
+}
