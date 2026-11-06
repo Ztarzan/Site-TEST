@@ -58,41 +58,6 @@ body {
     border-radius: 5px;
 }
 
-/* Boite de présentation */
-
-.boite-terminal {
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    margin-top: 30px;
-    width: 100%;
-    max-width: 600px;
-    border: 1px solid #333;
-}
-
-.entete-terminal {
-    background-color: #2d2d2d;
-    padding: 10px 15px;
-    border-radius: 10px 10px 0 0;
-    display: flex;
-    gap: 8px;
-}
-
-.point {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.rouge { background-color: #ff5f56; }
-.jaune { background-color: #ffbd2e; }
-.vert { background-color: #27c93f; }
-
-.contenu-terminal {
-    padding: 20px;
-    font-size: 28px;
-    color: white;
-}
-
 /* Page d'accueil */
 
 .livre-ouvert {
