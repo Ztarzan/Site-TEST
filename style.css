@@ -57,3 +57,96 @@ body {
     color: white;
 }
 
+/* Page d'accueil */
+
+.scene {
+    width: 150px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 50px auto; 
+}
+
+.livre {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotationLivre 8s infinite linear;
+}
+
+.face {
+    position: absolute;
+    border: 2px solid #00ff66;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.5), inset 0 0 10px rgba(0, 255, 102, 0.2);
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ff66;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+/* Géométrie parfaite de la boîte (150x200, épaisseur 40) */
+.avant { width: 150px; height: 200px; transform: translateZ(20px); }
+.arriere { width: 150px; height: 200px; transform: rotateY(180deg) translateZ(20px); }
+.tranche-gauche { width: 40px; height: 200px; left: 55px; transform: rotateY(-90deg) translateZ(75px); }
+.pages-droite { width: 40px; height: 200px; left: 55px; transform: rotateY(90deg) translateZ(75px); }
+.pages-haut { width: 150px; height: 40px; top: 80px; transform: rotateX(90deg) translateZ(100px); }
+.pages-bas { width: 150px; height: 40px; top: 80px; transform: rotateX(-90deg) translateZ(100px); }
+
+@keyframes rotationLivre {
+    0% { transform: rotateX(-15deg) rotateY(0deg); }
+    100% { transform: rotateX(-15deg) rotateY(360deg); }
+}
+
+.presentation-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.texte-presentation {
+    width: 50%;
+}
+
+.texte-presentation h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.sous-titre {
+    font-size: 1.2em;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+.boutons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-vert {
+    background-color: #00ff66;
+    color: black;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.btn-contour {
+    background-color: transparent;
+    color: #00ff66;
+    border: 2px solid #00ff66;
+    padding: 10px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
