@@ -142,11 +142,28 @@ body {
 }
 
 .contenu-page {
-    color: #00ff66;
+    color: #00ff66; /* Rend le texte vert au lieu de blanc */
     font-family: 'Courier New', Courier, monospace;
-    font-size: 18px;
-    line-height: 2.5;
-    opacity: 0.8;
+    font-size: 20px;
+    line-height: 2;
+    
+    /* Centre et répartit proprement le texte sur toute la feuille */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Corrige le texte à l'envers (effet miroir) sur les pages qui se tournent vers la gauche */
+.p1 .contenu-page, 
+.p2 .contenu-page, 
+.p3 .contenu-page {
+    transform: rotateY(180deg);
 }
 
 .p1 { z-index: 4; animation-delay: 0.2s; }
