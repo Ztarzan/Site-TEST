@@ -209,3 +209,52 @@ body {
     font-weight: bold;
     border-radius: 4px;
 }   
+
+
+/* =========================================
+   ADAPTATION POUR TÉLÉPHONES (RESPONSIVE)
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. Navbar : on empile le logo et les liens */
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* 2. Conteneur principal : on passe de côte à côte à haut en bas */
+    .presentation-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    /* 3. Texte : prend toute la largeur au lieu de 50% */
+    .texte-presentation {
+        width: 100%;
+    }
+
+    /* 4. Boutons : on les centre */
+    .boutons {
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    /* 5. Formules de fond : on réduit fortement la taille pour éviter les bugs d'affichage */
+    .formule-defilante {
+        font-size: 3rem !important;
+    }
+    
+    /* On ajuste un peu la taille du livre pour les petits écrans */
+    .livre-ouvert {
+        width: 180px;
+        height: 240px;
+        margin-top: 20px;
+    }
+}
