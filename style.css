@@ -1,8 +1,51 @@
-/* Le fond */
+/* Le fond étoilé */
 body {
     font-family: Arial, sans-serif;
     background-color: black;
     color: white;
+    margin: 0;
+    /* Création des petites étoiles vertes avec un double motif aléatoire */
+    background-image: 
+        radial-gradient(circle, rgba(0, 255, 102, 0.3) 1px, transparent 1px),
+        radial-gradient(circle, rgba(0, 255, 102, 0.15) 1px, transparent 1px);
+    background-size: 100px 100px, 60px 60px;
+    background-position: 0 0, 30px 30px;
+    position: relative;
+    overflow-x: hidden; /* Empêche l'écran de bouger sur les côtés */
+}
+
+/* Le conteneur qui reste en arrière-plan */
+.fond-anime {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Passe derrière tout le reste du site */
+    overflow: hidden;
+    pointer-events: none; /* Empêche la souris d'interagir avec les formules */
+}
+
+/* Le style des formules géantes */
+.formule-defilante {
+    position: absolute;
+    color: rgba(0, 255, 102, 0.05); /* Très transparent (5% d'opacité) */
+    font-size: 8rem; /* Très gros texte */
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    white-space: nowrap;
+    animation: defilement linear infinite; /* Animation continue */
+}
+
+/* Positionnement et vitesse de chaque formule */
+.f1 { left: 5%; animation-duration: 25s; animation-delay: 0s; }
+.f2 { left: 55%; animation-duration: 35s; animation-delay: -10s; font-size: 7rem; }
+.f3 { left: 25%; animation-duration: 45s; animation-delay: -20s; font-size: 6rem; }
+
+/* Le mouvement de haut en bas */
+@keyframes defilement {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
 }
 
 /* Barre de navigation */
@@ -60,7 +103,7 @@ body {
 
 /* Page d'accueil */
 
-/* Livre agrandi (220x300 au lieu de 150x200) */
+/* Livre agrandi (220x300) */
 .livre-ouvert {
     width: 220px; 
     height: 300px; 
@@ -98,7 +141,6 @@ body {
     border: 2px solid #00ff66;
 }
 
-/* NOUVEAU : Style police mathématique type code/machine */
 .contenu-page {
     color: #00ff66;
     font-family: 'Courier New', Courier, monospace;
