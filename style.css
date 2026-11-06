@@ -1,14 +1,50 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    text-align: center;
-}
-
 /* Le fond */
 body {
+    font-family: Arial, sans-serif;
     background-color: black;
     color: white;
+}
+
+/* Barre de navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #0a0a0a;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.vert {
+    color: #00ff66;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #00ff66;
 }
 
 /* Bouton */
