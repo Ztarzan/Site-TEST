@@ -37,10 +37,11 @@ body {
     animation: defilement linear infinite; /* Animation continue */
 }
 
-/* Positionnement et vitesse de chaque formule */
-.f1 { left: 5%; animation-duration: 25s; animation-delay: 0s; }
+.f1 { left: 5%; animation-duration: 25s; animation-delay: 0s; font-size: 8rem; }
 .f2 { left: 55%; animation-duration: 35s; animation-delay: -10s; font-size: 7rem; }
 .f3 { left: 25%; animation-duration: 45s; animation-delay: -20s; font-size: 6rem; }
+.f4 { left: 75%; animation-duration: 30s; animation-delay: -15s; font-size: 5rem; }
+.f5 { left: 15%; animation-duration: 40s; animation-delay: -5s; font-size: 6.5rem; }
 
 /* Le mouvement de haut en bas */
 @keyframes defilement {
