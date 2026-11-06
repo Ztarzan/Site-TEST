@@ -152,24 +152,24 @@ body {
 
 /* Séquence d'ouverture progressive et de fermeture en ordre inverse */
 @keyframes ouvreCover { 
-    0%, 10% { transform: rotateY(0deg); } 
-    40%, 60% { transform: rotateY(-170deg); } 
-    90%, 100% { transform: rotateY(0deg); } 
+    0%, 10% { transform: translateZ(4px) rotateY(0deg); } 
+    40%, 60% { transform: translateZ(4px) rotateY(-170deg); } 
+    90%, 100% { transform: translateZ(4px) rotateY(0deg); } 
 }
 @keyframes ouvreP1 { 
-    0%, 15% { transform: rotateY(0deg); } 
-    42%, 58% { transform: rotateY(-165deg); } 
-    85%, 100% { transform: rotateY(0deg); } 
+    0%, 15% { transform: translateZ(3px) rotateY(0deg); } 
+    42%, 58% { transform: translateZ(3px) rotateY(-165deg); } 
+    85%, 100% { transform: translateZ(3px) rotateY(0deg); } 
 }
 @keyframes ouvreP2 { 
-    0%, 20% { transform: rotateY(0deg); } 
-    45%, 55% { transform: rotateY(-160deg); } 
-    80%, 100% { transform: rotateY(0deg); } 
+    0%, 20% { transform: translateZ(2px) rotateY(0deg); } 
+    45%, 55% { transform: translateZ(2px) rotateY(-160deg); } 
+    80%, 100% { transform: translateZ(2px) rotateY(0deg); } 
 }
 @keyframes ouvreP3 { 
-    0%, 25% { transform: rotateY(0deg); } 
-    48%, 52% { transform: rotateY(-155deg); } 
-    75%, 100% { transform: rotateY(0deg); } 
+    0%, 25% { transform: translateZ(1px) rotateY(0deg); } 
+    48%, 52% { transform: translateZ(1px) rotateY(-155deg); } 
+    75%, 100% { transform: translateZ(1px) rotateY(0deg); } 
 }
 
 .presentation-container {
