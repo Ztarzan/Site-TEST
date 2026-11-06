@@ -60,9 +60,10 @@ body {
 
 /* Page d'accueil */
 
+/* Livre agrandi (220x300 au lieu de 150x200) */
 .livre-ouvert {
-    width: 150px;
-    height: 200px;
+    width: 220px; 
+    height: 300px; 
     position: relative;
     perspective: 1500px;
     transform: rotateX(15deg) rotateY(15deg);
@@ -70,6 +71,7 @@ body {
     margin: 50px auto;
 }
 
+/* Centrage global pour le texte des pages */
 .page {
     width: 100%;
     height: 100%;
@@ -81,17 +83,28 @@ body {
     background-color: #0a0a0a;
     box-shadow: inset 0 0 15px rgba(0, 255, 102, 0.1);
     animation: tournePage 6s infinite ease-in-out;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .couverture { 
     z-index: 5; 
     color: #00ff66; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
     font-weight: bold; 
-    font-size: 24px;
+    font-size: 32px; /* Titre agrandi */
     border: 2px solid #00ff66;
+}
+
+/* NOUVEAU : Style police mathématique type code/machine */
+.contenu-page {
+    color: #00ff66;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    line-height: 2.5;
+    opacity: 0.8;
 }
 
 .p1 { z-index: 4; animation-delay: 0.2s; }
