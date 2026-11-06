@@ -126,55 +126,50 @@ body {
     border: 1px solid #00ff66;
     background-color: #0a0a0a;
     box-shadow: inset 0 0 15px rgba(0, 255, 102, 0.1);
-    animation: tournePage 6s infinite ease-in-out;
-    
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* Nouvelle durée d'animation globale, sans delay */
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
 .couverture { 
     z-index: 5; 
     color: #00ff66; 
     font-weight: bold; 
-    font-size: 32px; /* Titre agrandi */
+    font-size: 32px; 
     border: 2px solid #00ff66;
+    animation-name: ouvreCover; 
 }
 
-.contenu-page {
-    color: #00ff66; /* Rend le texte vert au lieu de blanc */
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
-    line-height: 2;
-    
-    /* Centre et répartit proprement le texte sur toute la feuille */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 15px;
-    box-sizing: border-box;
+.p1 { z-index: 4; animation-name: ouvreP1; }
+.p2 { z-index: 3; animation-name: ouvreP2; }
+.p3 { z-index: 2; animation-name: ouvreP3; }
+.dos { z-index: 1; border: 2px solid #00ff66; }
+
+/* Séquence d'ouverture progressive et de fermeture en ordre inverse */
+@keyframes ouvreCover { 
+    0%, 10% { transform: rotateY(0deg); } 
+    40%, 60% { transform: rotateY(-170deg); } 
+    90%, 100% { transform: rotateY(0deg); } 
 }
-
-/* Corrige le texte à l'envers (effet miroir) sur les pages qui se tournent vers la gauche */
-.p1 .contenu-page, 
-.p2 .contenu-page, 
-.p3 .contenu-page {
-    transform: rotateY(180deg);
+@keyframes ouvreP1 { 
+    0%, 15% { transform: rotateY(0deg); } 
+    42%, 58% { transform: rotateY(-165deg); } 
+    85%, 100% { transform: rotateY(0deg); } 
 }
-
-.p1 { z-index: 4; animation-delay: 0.2s; }
-.p2 { z-index: 3; animation-delay: 0.4s; }
-.p3 { z-index: 2; animation-delay: 0.6s; }
-.dos { z-index: 1; animation: none; border: 2px solid #00ff66; }
-
-@keyframes tournePage {
-    0%, 10% { transform: rotateY(0deg); }
-    90%, 100% { transform: rotateY(-170deg); }
+@keyframes ouvreP2 { 
+    0%, 20% { transform: rotateY(0deg); } 
+    45%, 55% { transform: rotateY(-160deg); } 
+    80%, 100% { transform: rotateY(0deg); } 
+}
+@keyframes ouvreP3 { 
+    0%, 25% { transform: rotateY(0deg); } 
+    48%, 52% { transform: rotateY(-155deg); } 
+    75%, 100% { transform: rotateY(0deg); } 
 }
 
 .presentation-container {
