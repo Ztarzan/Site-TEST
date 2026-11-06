@@ -5,6 +5,14 @@ body {
     text-align: center;
 }
 
+/* Le fond */
+body {
+    background-color: black;
+    color: white;
+}
+
+/* Bouton */
+
 .bouton-qcm {
     display: inline-block;
     padding: 10px 20px;
@@ -13,6 +21,8 @@ body {
     text-decoration: none;
     border-radius: 5px;
 }
+
+/* Boite de présentation */
 
 .boite-terminal {
     background-color: #1a1a1a;
@@ -46,3 +56,4 @@ body {
     font-size: 28px;
     color: white;
 }
+
