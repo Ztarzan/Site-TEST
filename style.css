@@ -112,7 +112,7 @@ body {
     perspective: 1500px;
     transform: rotateX(15deg) rotateY(15deg);
     transform-style: preserve-3d;
-    margin: 50px auto;
+    margin: 50px 0 50px auto;
 }
 
 /* Centrage global pour le texte des pages */
@@ -258,4 +258,57 @@ body {
 .p2 .contenu-page, 
 .p3 .contenu-page {
     transform: rotateY(180deg);
+}
+
+/* A propos de moi */
+
+.a-propos {
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.titre-section {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Le trait vert sous le titre */
+.titre-section::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #00ff66;
+}
+
+/* La boîte pleine largeur */
+.parcours-container {
+    background-color: #0f0f0f;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.parcours-container h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.parcours-container p {
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 15px;
+    font-size: 1.1em;
 }
