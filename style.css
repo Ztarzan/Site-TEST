@@ -731,3 +731,7 @@ body {
         grid-template-rows: auto;
     }
 }
+
+html {
+    scroll-behavior: smooth;
+}
