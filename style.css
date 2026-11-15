@@ -384,9 +384,9 @@ body {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* 1fr 1fr = 2 colonnes de taille égale */
+    gap: 4rem; /* Espace entre les colonnes */
 }
 
 /* Informations de contact (Cartes) */
