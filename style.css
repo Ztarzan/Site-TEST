@@ -374,64 +374,68 @@ body {
 
 
 /* =========================================
-   SECTION CONTACT (STYLE NEON SAMIR)
+   SECTION CONTACT (EXACTEMENT COMME SAMIR)
    ========================================= */
+
+/* Fond noir pleine largeur qui masque les étoiles et formules */
 .contact {
-    background: #000000; /* Fond noir absolu */
-    padding: 100px 50px;
+    width: 100%;
+    background-color: #0a0a0a;
+    padding: 100px 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Conteneur centré de Samir */
+.contact .container {
     max-width: 1200px;
     margin: 0 auto;
-    position: relative;
-    box-sizing: border-box;
+    padding: 0 20px;
 }
 
-/* Le titre CONTACT centré */
+/* Titre CONTACT en blanc avec soulignement vert fluo */
 .contact .section-title {
-    color: #ffffff; /* Texte en blanc */
+    font-size: 3rem;
+    font-weight: 700;
     text-align: center;
-    font-size: 2.8em;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 0 auto 70px auto;
-    display: block;
+    margin-bottom: 4rem;
+    color: #ffffff;
     position: relative;
-    width: fit-content;
+    text-transform: uppercase;
 }
 
-/* Le trait vert fluo sous le titre */
 .contact .section-title::after {
-    content: "";
+    content: '';
     position: absolute;
-    bottom: -15px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: #00ff88; /* Vert fluo */
-    box-shadow: 0 0 12px rgba(0, 255, 136, 0.8); /* Effet de lueur */
+    width: 100px;
+    height: 3px;
+    background: #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
 }
 
-/* Layout à 2 colonnes (à gauche : infos, à droite : formulaire) */
+/* Grille principale : Cartes à gauche, Formulaire à droite */
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1.1fr; /* Le formulaire est légèrement plus large */
+    grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
 }
 
-/* Grille des 4 cartes d'infos */
+/* Grille 2x2 pour les 4 cartes de gauche */
 .contact-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
 }
 
-/* Les cartes d'infos */
 .contact-card {
-    background: rgba(255, 255, 255, 0.03); /* Fond très sombre transparent */
-    padding: 2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
     border-radius: 10px;
-    border: 1px solid #1a1a1a;
+    border: 1px solid #333333;
     text-align: center;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
@@ -439,40 +443,33 @@ body {
 
 .contact-card:hover {
     transform: translateY(-5px);
-    border-color: #00ff88; /* Bordure verte au survol */
-    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2); /* Halo subtil */
+    border-color: #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
 }
 
 .contact-card i {
-    font-size: 2.2rem;
-    color: #00ff88; /* Icônes vertes */
+    font-size: 2rem;
+    color: #00ff88;
     margin-bottom: 1rem;
 }
 
 .contact-card h3 {
-    color: #ffffff; /* Texte blanc */
+    color: #ffffff;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
-    font-weight: bold;
 }
 
-.contact-card p, .contact-card a {
-    color: #cccccc; /* Infos en gris clair */
-    font-size: 0.9rem;
-    text-decoration: none;
-    word-break: break-all;
+.contact-card p {
+    color: #cccccc;
+    margin: 0;
 }
 
-.contact-card a:hover {
-    color: #00ff88;
-}
-
-/* Le formulaire */
+/* Bloc Formulaire à droite */
 .contact-form {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 2.5rem;
-    border-radius: 12px;
-    border: 1px solid #1a1a1a;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #333333;
     backdrop-filter: blur(10px);
 }
 
@@ -484,65 +481,57 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.05); /* Fond des champs sombre */
-    border: 1px solid #222222;
-    border-radius: 6px;
-    color: #ffffff; /* Texte de saisie blanc */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #333333;
+    border-radius: 5px;
+    color: #ffffff;
     font-size: 1rem;
+    font-family: inherit;
     transition: all 0.3s ease;
     box-sizing: border-box;
 }
 
-/* Quand on clique dans le champ */
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: #00ff88;
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 10px rgba(0, 255, 136, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #666666; /* Texte d'indication en gris foncé */
+    color: #666666;
 }
 
-/* Le grand bouton envoyer */
-.contact-form button[type="submit"] {
+/* Bouton Envoyer de Samir */
+.contact-form .btn-primary {
     width: 100%;
-    padding: 1.1rem;
-    background: #00ff88; /* Bouton vert fluo */
-    color: #000000; /* Texte noir contrasté */
+    padding: 1rem 2rem;
+    background: #00ff88;
+    color: #0a0a0a;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
+    cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(0, 255, 136, 0.4); /* Effet néon d'origine */
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
 }
 
-.contact-form button[type="submit"]:hover {
-    background: #00ff66;
-    box-shadow: 0 0 25px rgba(0, 255, 136, 0.6); /* Éclat accentué */
-    transform: translateY(-2px);
+.contact-form .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
 }
 
-/* Adaptabilité Mobile (Responsive) */
+/* Adaptation téléphone */
 @media (max-width: 768px) {
-    .contact {
-        padding: 60px 20px;
-    }
     .contact-content {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 2rem;
     }
     .contact-info {
         grid-template-columns: 1fr;
-    }
-    .contact-form {
-        padding: 1.5rem;
     }
 }
