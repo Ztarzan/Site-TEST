@@ -374,26 +374,28 @@ body {
 
 
 /* =========================================
-   SECTION CONTACT
+   SECTION CONTACT (STYLE NEON SAMIR)
    ========================================= */
 .contact {
-    background: #0a0a0a; /* Fond noir */
+    background: #000000; /* Fond noir absolu */
     padding: 100px 50px;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
 }
 
-/* Le titre CONTACT souligné en vert fluo */
+/* Le titre CONTACT centré */
 .contact .section-title {
     color: #ffffff; /* Texte en blanc */
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.8em;
+    font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 50px;
+    margin: 0 auto 70px auto;
+    display: block;
     position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
+    width: fit-content;
 }
 
 /* Le trait vert fluo sous le titre */
@@ -403,32 +405,33 @@ body {
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
+    width: 80px;
     height: 4px;
     background-color: #00ff88; /* Vert fluo */
-    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5); /* Effet néon */
+    box-shadow: 0 0 12px rgba(0, 255, 136, 0.8); /* Effet de lueur */
 }
 
-/* Disposition en deux colonnes */
+/* Layout à 2 colonnes (à gauche : infos, à droite : formulaire) */
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.1fr; /* Le formulaire est légèrement plus large */
     gap: 4rem;
     align-items: start;
 }
 
-/* Cartes d'information à gauche */
+/* Grille des 4 cartes d'infos */
 .contact-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
 }
 
+/* Les cartes d'infos */
 .contact-card {
-    background: rgba(255, 255, 255, 0.05); /* Fond légèrement transparent */
-    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03); /* Fond très sombre transparent */
+    padding: 2rem 1.5rem;
     border-radius: 10px;
-    border: 1px solid #333333;
+    border: 1px solid #1a1a1a;
     text-align: center;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
@@ -437,32 +440,39 @@ body {
 .contact-card:hover {
     transform: translateY(-5px);
     border-color: #00ff88; /* Bordure verte au survol */
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3); /* Ombre néon au survol */
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2); /* Halo subtil */
 }
 
 .contact-card i {
-    font-size: 2rem;
-    color: #00ff88; /* Icône verte */
+    font-size: 2.2rem;
+    color: #00ff88; /* Icônes vertes */
     margin-bottom: 1rem;
 }
 
 .contact-card h3 {
-    color: #ffffff; /* Titre blanc */
+    color: #ffffff; /* Texte blanc */
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .contact-card p, .contact-card a {
-    color: #cccccc; /* Texte gris clair */
+    color: #cccccc; /* Infos en gris clair */
+    font-size: 0.9rem;
     text-decoration: none;
+    word-break: break-all;
 }
 
-/* Formulaire de contact à droite */
+.contact-card a:hover {
+    color: #00ff88;
+}
+
+/* Le formulaire */
 .contact-form {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     padding: 2.5rem;
-    border-radius: 10px;
-    border: 1px solid #333333;
+    border-radius: 12px;
+    border: 1px solid #1a1a1a;
     backdrop-filter: blur(10px);
 }
 
@@ -474,59 +484,65 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #333333;
-    border-radius: 5px;
-    color: #ffffff; /* Texte tapé en blanc */
+    background: rgba(255, 255, 255, 0.05); /* Fond des champs sombre */
+    border: 1px solid #222222;
+    border-radius: 6px;
+    color: #ffffff; /* Texte de saisie blanc */
     font-size: 1rem;
     transition: all 0.3s ease;
-    font-family: inherit;
-    box-sizing: border-box; /* Évite que les champs ne débordent */
+    box-sizing: border-box;
 }
 
-/* Effet quand on clique sur un champ */
+/* Quand on clique dans le champ */
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: #00ff88;
-    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.1);
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #888888; /* Couleur du texte indicatif */
+    color: #666666; /* Texte d'indication en gris foncé */
 }
 
-/* Bouton envoyer */
-.contact-form button {
+/* Le grand bouton envoyer */
+.contact-form button[type="submit"] {
     width: 100%;
-    padding: 1rem;
-    background: #00ff88;
-    color: #0a0a0a; /* Texte noir sur fond vert */
+    padding: 1.1rem;
+    background: #00ff88; /* Bouton vert fluo */
+    color: #000000; /* Texte noir contrasté */
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
     transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.4); /* Effet néon d'origine */
 }
 
-.contact-form button:hover {
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+.contact-form button[type="submit"]:hover {
+    background: #00ff66;
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.6); /* Éclat accentué */
     transform: translateY(-2px);
 }
 
-/* Responsive (pour les téléphones) */
+/* Adaptabilité Mobile (Responsive) */
 @media (max-width: 768px) {
+    .contact {
+        padding: 60px 20px;
+    }
     .contact-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
     }
     .contact-info {
         grid-template-columns: 1fr;
     }
-    .contact {
-        padding: 60px 20px;
+    .contact-form {
+        padding: 1.5rem;
     }
 }
