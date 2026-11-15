@@ -372,6 +372,154 @@ body {
     line-height: 1.4;
 }
 
+/* =========================================
+   SECTION TARIFS
+   ========================================= */
+
+.tarifs {
+    width: 100%;
+    background-color: #0a0a0a;
+    padding: 100px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.tarifs .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Titre TARIFS en Orbitron avec soulignement vert fluo */
+.tarifs .section-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #ffffff;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.tarifs .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+/* Texte d'introduction avec le point vert lumineux */
+.tarifs-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 750px;
+    margin: 0 auto 3.5rem auto;
+    text-align: center;
+}
+
+.point-vert {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    background-color: #00ff88;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 6px rgba(0, 255, 136, 0.35);
+}
+
+.tarifs-intro p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Conteneur des deux grandes cases (empilées comme sur la capture) */
+.tarifs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Style de chaque case */
+.tarif-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 2.2rem 2.5rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.tarif-card:hover {
+    transform: translateY(-4px);
+    border-color: #0088ff;
+    box-shadow: 0 0 25px rgba(0, 136, 255, 0.2);
+}
+
+/* Sous-titre bleu néon centré (comme "Qu'est-ce qu'un ransomware ?") */
+.tarif-card h3 {
+    font-family: 'Orbitron', monospace;
+    color: #0088ff;
+    font-size: 1.35rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Liste à puces bleues */
+.tarif-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.tarif-card li {
+    color: #dcdcdc;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+    text-align: left;
+}
+
+.tarif-card li:last-child {
+    margin-bottom: 0;
+}
+
+.tarif-card li::before {
+    content: '•';
+    color: #0088ff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* Responsive téléphone */
+@media (max-width: 768px) {
+    .tarifs .section-title {
+        font-size: 2.2rem;
+    }
+    .tarifs-intro {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .tarif-card {
+        padding: 1.5rem;
+    }
+}
 
 /* =========================================
    SECTION CONTACT (TAILLE ÉGALE + STYLE SAMIR)
