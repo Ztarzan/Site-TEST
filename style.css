@@ -377,19 +377,47 @@ body {
    SECTION CONTACT
    ========================================= */
 .contact {
-    background: var(--bg-dark);
+    background: #0a0a0a; /* Fond noir */
     padding: 100px 50px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.contact-content {
-    display: grid; 
-    grid-template-columns: 1fr 1fr; /* 1fr 1fr = 2 colonnes de taille égale */
-    gap: 4rem; /* Espace entre les colonnes */
+/* Le titre CONTACT souligné en vert fluo */
+.contact .section-title {
+    color: #ffffff; /* Texte en blanc */
+    text-align: center;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* Informations de contact (Cartes) */
+/* Le trait vert fluo sous le titre */
+.contact .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #00ff88; /* Vert fluo */
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5); /* Effet néon */
+}
+
+/* Disposition en deux colonnes */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* Cartes d'information à gauche */
 .contact-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -397,10 +425,10 @@ body {
 }
 
 .contact-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05); /* Fond légèrement transparent */
     padding: 1.5rem;
     border-radius: 10px;
-    border: 1px solid var(--border-color);
+    border: 1px solid #333333;
     text-align: center;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
@@ -408,31 +436,33 @@ body {
 
 .contact-card:hover {
     transform: translateY(-5px);
-    border-color: var(--primary-color);
-    box-shadow: var(--shadow-neon);
+    border-color: #00ff88; /* Bordure verte au survol */
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3); /* Ombre néon au survol */
 }
 
 .contact-card i {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: #00ff88; /* Icône verte */
     margin-bottom: 1rem;
 }
 
 .contact-card h3 {
-    color: var(--text-light);
+    color: #ffffff; /* Titre blanc */
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
 
-.contact-card p {
-    color: var(--text-gray);
+.contact-card p, .contact-card a {
+    color: #cccccc; /* Texte gris clair */
+    text-decoration: none;
 }
 
-/* Formulaire de contact */
+/* Formulaire de contact à droite */
 .contact-form {
     background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 10px;
-    border: 1px solid var(--border-color);
+    border: 1px solid #333333;
     backdrop-filter: blur(10px);
 }
 
@@ -445,27 +475,49 @@ body {
     width: 100%;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--border-color);
+    border: 1px solid #333333;
     border-radius: 5px;
-    color: var(--text-light);
+    color: #ffffff; /* Texte tapé en blanc */
     font-size: 1rem;
     transition: all 0.3s ease;
-    box-sizing: border-box;
+    font-family: inherit;
+    box-sizing: border-box; /* Évite que les champs ne débordent */
 }
 
+/* Effet quand on clique sur un champ */
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: var(--shadow-neon);
+    border-color: #00ff88;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: var(--text-dark);
+    color: #888888; /* Couleur du texte indicatif */
 }
 
-/* Responsive pour téléphone (à placer dans votre bloc @media) */
+/* Bouton envoyer */
+.contact-form button {
+    width: 100%;
+    padding: 1rem;
+    background: #00ff88;
+    color: #0a0a0a; /* Texte noir sur fond vert */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Responsive (pour les téléphones) */
 @media (max-width: 768px) {
     .contact-content {
         grid-template-columns: 1fr;
@@ -475,6 +527,6 @@ body {
         grid-template-columns: 1fr;
     }
     .contact {
-        padding: 40px 20px;
+        padding: 60px 20px;
     }
 }
