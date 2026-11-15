@@ -374,10 +374,9 @@ body {
 
 
 /* =========================================
-   SECTION CONTACT (EXACTEMENT COMME SAMIR)
+   SECTION CONTACT (TAILLE ÉGALE + STYLE SAMIR)
    ========================================= */
 
-/* Fond noir pleine largeur qui masque les étoiles et formules */
 .contact {
     width: 100%;
     background-color: #0a0a0a;
@@ -386,15 +385,15 @@ body {
     z-index: 2;
 }
 
-/* Conteneur centré de Samir */
 .contact .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Titre CONTACT en blanc avec soulignement vert fluo */
+/* Titre CONTACT avec la police Orbitron et l'effet néon de Samir */
 .contact .section-title {
+    font-family: 'Orbitron', monospace;
     font-size: 3rem;
     font-weight: 700;
     text-align: center;
@@ -402,8 +401,10 @@ body {
     color: #ffffff;
     position: relative;
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
+/* Barre vert fluo de 100px sous CONTACT */
 .contact .section-title::after {
     content: '';
     position: absolute;
@@ -416,19 +417,21 @@ body {
     box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
 }
 
-/* Grille principale : Cartes à gauche, Formulaire à droite */
+/* Deux colonnes de même largeur (1fr 1fr) et de même hauteur (stretch) */
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: start;
+    align-items: stretch; /* Force la gauche et la droite à avoir la même hauteur */
 }
 
-/* Grille 2x2 pour les 4 cartes de gauche */
+/* Grille 2x2 à gauche qui s'étire sur toute la hauteur du formulaire */
 .contact-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; /* Étire les 2 lignes de cartes équitablement */
     gap: 1.5rem;
+    height: 100%;
 }
 
 .contact-card {
@@ -439,6 +442,11 @@ body {
     text-align: center;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    /* Centre parfaitement l'icône et le texte au milieu de chaque carte étirée */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact-card:hover {
@@ -454,14 +462,16 @@ body {
 }
 
 .contact-card h3 {
+    font-family: 'Orbitron', monospace;
     color: #ffffff;
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .contact-card p {
     color: #cccccc;
     margin: 0;
+    font-size: 0.95rem;
 }
 
 /* Bloc Formulaire à droite */
@@ -471,6 +481,16 @@ body {
     border-radius: 10px;
     border: 1px solid #333333;
     backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 }
 
 .form-group {
@@ -503,14 +523,15 @@ body {
     color: #666666;
 }
 
-/* Bouton Envoyer de Samir */
+/* Bouton Envoyer style Samir */
 .contact-form .btn-primary {
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 12px 30px;
     background: #00ff88;
     color: #0a0a0a;
     border: none;
     border-radius: 5px;
+    font-family: 'Orbitron', monospace;
     font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -521,7 +542,7 @@ body {
 }
 
 .contact-form .btn-primary:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
 }
 
@@ -533,5 +554,6 @@ body {
     }
     .contact-info {
         grid-template-columns: 1fr;
+        grid-template-rows: auto;
     }
 }
