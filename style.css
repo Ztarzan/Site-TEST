@@ -346,15 +346,17 @@ body {
     font-size: 1.1em;
 }
 
-/* Flèche animée calée en bas du premier écran */
+/* Flèche animée cliquable */
 .fleche-bas {
+    display: block;
     width: 30px;
     height: 30px;
     border-bottom: 2px solid #00ff66;
     border-right: 2px solid #00ff66;
     transform: rotate(45deg);
-    margin: 10px auto 80px auto; /* 80px en bas pour cacher la section suivante */
+    margin: 10px auto 80px auto;
     animation: rebond 2s infinite;
+    cursor: pointer;
 }
 
 @keyframes rebond {
