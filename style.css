@@ -78,19 +78,41 @@ body {
     padding: 0;
 }
 
+/* Style de base des liens de l'annuaire */
 .nav-links a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-size: 19px; /* Beaucoup plus gros (anciennement 14px) */
-    transition: color 0.3s ease, transform 0.2s ease;
+    font-size: 19px;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
+/* Changement de couleur en vert fluo au survol de la souris */
 .nav-links a:hover {
-    color: #00ff66;
+    color: #00ff88;
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
 }
+
+/* Trait vert sous le mot (caché par défaut) */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00ff88;
+    transition: width 0.3s ease;
+}
+
+/* Le trait s'étire à 100% au survol */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
 
 /* Bouton */
 
