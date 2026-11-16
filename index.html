@@ -27,8 +27,8 @@
             <li><a href="index.html">ACCUEIL</a></li>
             <li><a href="qcm.html">A propos de moi</a></li>
             <li><a href="fiches.html" target="_blank">FICHES</a></li>
-            <li><a href="projets.html">Section Eleves</a></li>
-            <li><a href="projets.html">Avis</a></li>
+            <li><a href="eleves.html">Reservé à mes élèves</a></li>
+            <li><a href="avis.html">Avis</a></li>
             <li><a href="#contact">CONTACT</a></li>
         </ul>
         <div class="logo">MITHUSHAN <span class="vert">MAYURAN</span></div>
@@ -152,18 +152,22 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
+                    <form action="https://formsubmit.co/ton.adresse@gmail.com" method="POST">
+                        <!-- Désactive le captcha et personnalise le titre du mail reçu -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Nouveau message depuis mon site de cours !">
+
                         <div class="form-group">
-                            <input type="text" placeholder="Nom" required>
+                            <input type="text" name="Nom" placeholder="Nom" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email" required>
+                            <input type="email" name="Email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Sujet" required>
+                            <input type="text" name="Sujet" placeholder="Sujet" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Message" rows="5" required></textarea>
+                            <textarea name="Message" placeholder="Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Envoyer</button>
                     </form>
