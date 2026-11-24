@@ -202,6 +202,8 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    overflow: hidden; /* Les formules trop larges ne dépassent plus des pages */
+    box-sizing: border-box;
     /* Nouvelle durée d'animation globale, sans delay */
     animation-duration: 12s;
     animation-iteration-count: infinite;
@@ -220,7 +222,9 @@ body {
 .p1 { z-index: 4; animation-name: ouvreP1; }
 .p2 { z-index: 3; animation-name: ouvreP2; }
 .p3 { z-index: 2; animation-name: ouvreP3; }
-.dos { z-index: 1; border: 2px solid #00ff66; }
+/* translateZ explicite : sur iPhone (Safari), une page sans transformation 3D
+   est dessinée par-dessus les autres et ses formules traversaient la couverture */
+.dos { z-index: 1; border: 2px solid #00ff66; transform: translateZ(0); }
 
 /* Séquence d'ouverture progressive et de fermeture en ordre inverse */
 @keyframes ouvreCover { 
@@ -346,8 +350,8 @@ body {
     
     /* On ajuste un peu la taille du livre pour les petits écrans */
     .livre-ouvert {
-        width: 180px;
-        height: 240px;
+        width: 210px;
+        height: 280px;
         margin-top: 20px;
     }
 }
@@ -382,8 +386,8 @@ body {
 @media (max-width: 768px) {
     .p3 .contenu-page,
     .dos .contenu-page {
-        font-size: 11px;
-        padding: 15px 6px;
+        font-size: 10px;
+        padding: 12px 4px;
     }
 }
 
@@ -1429,5 +1433,96 @@ html {
         width: 44px;
         height: 44px;
         font-size: 1.3rem;
+    }
+}
+
+/* =========================================
+   PHOTO DE PROFIL (case à part, à gauche de "Mon Parcours")
+   ========================================= */
+
+/* La case photo à gauche, la case parcours à droite */
+.parcours-ligne {
+    display: flex;
+    align-items: stretch; /* Les deux cases ont la même hauteur */
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 10px auto 80px auto;
+}
+
+/* La case de la photo : même style que la case "Mon Parcours" */
+.photo-carte {
+    flex-shrink: 0;
+    width: 320px;
+    box-sizing: border-box;
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-carte:hover {
+    border-color: #00ff66;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
+}
+
+.photo-profil {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover; /* Recadre la photo sans la déformer */
+    object-position: center 30%; /* Centre le cadrage sur le visage */
+    border: 3px solid #00ff66;
+    box-shadow: 0 0 30px rgba(0, 255, 102, 0.35);
+}
+
+.photo-nom {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 25px 0 6px;
+}
+
+.photo-role {
+    color: #aaaaaa;
+    margin: 0;
+}
+
+/* La case parcours prend le reste de la largeur */
+.parcours-ligne .parcours-container {
+    flex: 1;
+    margin: 0;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.parcours-container p:last-child {
+    margin-bottom: 0;
+}
+
+/* Tablette et téléphone : la case photo passe au-dessus */
+@media (max-width: 900px) {
+    .parcours-ligne {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .photo-carte {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .photo-profil {
+        width: 180px;
+        height: 180px;
     }
 }
