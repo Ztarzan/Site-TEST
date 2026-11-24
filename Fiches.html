@@ -1,174 +1,103 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
-    <link rel="stylesheet" href="fiches.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes Fiches de Révision - Mithushan Mayuran</title>
+    
+    <!-- Liens vers tes polices et ton fichier CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #0a0a0a;
-            color: #ffffff;
-            padding: 40px 20px 80px 20px;
-        }
-
-        /* Conteneur du bouton tout en haut au milieu */
-        .retour-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 50px;
-        }
-
-        /* Grand bouton de retour vers le site de départ */
-        .btn-retour {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            padding: 18px 45px;
-            background: #00ff88;
-            color: #0a0a0a;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-retour:hover {
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 0 35px rgba(0, 255, 136, 0.6);
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-            text-transform: uppercase;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: #00ff88;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
-        }
-
-        .fiches-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .fiche-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid #333333;
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .fiche-card:hover {
-            transform: translateY(-6px);
-            border-color: #00ff88;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-        }
-
-        .fiche-card h3 {
-            font-family: 'Orbitron', sans-serif;
-            color: #00ff88;
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-
-        .fiche-card p {
-            color: #cccccc;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .btn-pdf {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 22px;
-            background: #00ff88;
-            color: #0a0a0a;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-pdf:hover {
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
-            transform: translateY(-2px);
-        }
-    </style>
+    <link rel="stylesheet" href="fiches.css">
 </head>
 <body>
 
-    <!-- GRAND BOUTON TOUT EN HAUT AU MILIEU -->
+    <!-- BOUTON DE RETOUR AU SITE PRINCIPAL -->
     <div class="retour-container">
         <a href="index.html" class="btn-retour">
             <i class="fas fa-arrow-left"></i> RETOUR AU SITE PRINCIPAL
         </a>
     </div>
 
-    <div class="container">
-        <h1 class="section-title">MES FICHES</h1>
+    <!-- CONTENEUR DES DOCUMENTS -->
+    <div class="container documents-container">
+        
+        <h2 class="section-title">Mes Fiches et Ressources</h2>
 
-        <div class="fiches-grid">
-            <!-- Fiche 1 -->
-            <div class="fiche-card">
-                <h3>Mathématiques</h3>
-                <p>Sommes classiques, intégrales et développements limités.</p>
-                <a href="fiche-maths.pdf" class="btn-pdf" target="_blank">
-                    <i class="fas fa-file-pdf"></i> Ouvrir le PDF
-                </a>
-            </div>
-
-            <!-- Fiche 2 -->
-            <div class="fiche-card">
-                <h3>Physique-Chimie</h3>
-                <p>Formulaire d'électromagnétisme, mécanique et thermodynamique.</p>
-                <a href="fiche-physique.pdf" class="btn-pdf" target="_blank">
-                    <i class="fas fa-file-pdf"></i> Ouvrir le PDF
-                </a>
-            </div>
-
-            <!-- Fiche 3 -->
-            <div class="fiche-card">
-                <h3>Informatique</h3>
-                <p>Complexité algorithmique, structures de données et bases SQL.</p>
-                <a href="fiche-info.pdf" class="btn-pdf" target="_blank">
-                    <i class="fas fa-file-pdf"></i> Ouvrir le PDF
+        <!-- ENCADRÉ D'INTRODUCTION : documents présentés à titre d'exemple -->
+        <div class="intro-block">
+            <h3 class="intro-title"><i class="fas fa-circle-info"></i> Un aperçu de mon accompagnement</h3>
+            <p class="intro-texte">
+                Découvrez ci-dessous une sélection de documents représentatifs de ceux que je fournis à mes élèves&nbsp;:
+                <span class="vert">fiches de révision synthétiques</span>, <span class="vert">supports de cours annotés</span>
+                et <span class="vert">QCM d'entraînement</span> accompagnés de leur correction détaillée.
+            </p>
+            <p class="intro-texte">
+                Ces ressources sont présentées <strong>à titre d'exemple</strong>, afin de vous donner un aperçu concret
+                de ma méthode de travail et de la qualité des supports proposés. Les fiches consacrées aux chapitres
+                étudiés en cours sont, quant à elles, transmises à chaque élève via l'espace qui lui est réservé.
+            </p>
+            <div class="doc-actions">
+                <a href="eleves.html" class="btn-pdf">
+                    <i class="fas fa-lock"></i> Accéder à l'espace élèves
                 </a>
             </div>
         </div>
+
+        <!-- 1. FICHE DE RÉVISION -->
+        <div class="doc-block reveal">
+            <h3 class="doc-title">1. Fiche de Révision</h3>
+            <p class="doc-description">
+                Voici une fiche de révision complète sur les probabilités. J'ai résumé toutes les formules essentielles et les méthodes de résolution classiques pour gagner du temps le jour du contrôle.
+            </p>
+            <div class="doc-actions">
+                <a href="Fiches/Ondes EM.pdf" target="_blank" class="btn-pdf">
+                    <i class="fas fa-download"></i> Télécharger la fiche (PDF)
+                </a>
+            </div>
+        </div>
+
+        <!-- 2. EXEMPLE DE COURS -->
+        <div class="doc-block reveal">
+            <h3 class="doc-title">2. Exemple de Cours</h3>
+            <p class="doc-description">
+                Voici un extrait du support de cours que j'utilise avec mes élèves en distanciel. Le cours est interactif, coloré, et j'annote les PDF en direct avec mon iPad pour rendre l'explication plus claire.
+            </p>
+            <div class="doc-actions">
+                <a href="Fiches/Anoushka 1.pdf" target="_blank" class="btn-pdf">
+                    <i class="fas fa-download"></i> Télécharger le cours (PDF)
+                </a>
+            </div>
+        </div>
+
+        <!-- 3. LE QCM -->
+        <div class="doc-block reveal">
+            <h3 class="doc-title">3. Testez-vous : QCM</h3>
+            <p class="doc-description">
+                À la fin de chaque grand chapitre, je propose un QCM rapide pour vérifier que les notions de base sont acquises. Essayez de le faire sans regarder le cours !
+            </p>
+            <div class="doc-actions">
+                <a href="Fiches/QCM Probabilités Terminale - Sujet 30 Questions.pdf" target="_blank" class="btn-pdf">
+                    <i class="fas fa-download"></i> Télécharger le QCM (PDF)
+                </a>
+            </div>
+        </div>
+
+        <!-- 4. LA CORRECTION DU QCM -->
+        <div class="doc-block reveal">
+            <h3 class="doc-title">4. Correction du QCM</h3>
+            <p class="doc-description">
+                Ne regardez la correction qu'après avoir fait l'effort de chercher ! Chaque mauvaise réponse est l'occasion de comprendre une erreur courante.
+            </p>
+            <div class="doc-actions">
+                <a href="Fiches/QCM Probabilités Terminale - Corrigé 30 Questions.pdf" target="_blank" class="btn-pdf">
+                    <i class="fas fa-download"></i> Télécharger la correction (PDF)
+                </a>
+            </div>
+        </div>
+
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>

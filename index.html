@@ -3,40 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon site</title>
+
+    <!-- Icônes et polices -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <title>Mon site</title>
+
+    <!-- Feuille de style du site -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- MathJax : affichage des formules mathématiques -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
+    <!-- Section Fond animé -->
     <div class="fond-anime">
-        <div class="formule-defilante f1">\( \sum_{k=1}^{n} k^2 = \frac{n(n+1)(2n+1)}{6} \)</div>
-        <div class="formule-defilante f2">\( \int_{-\infty}^{+\infty} e^{-x^2} dx = \sqrt{\pi} \)</div>
-        <div class="formule-defilante f3">\( \sum_{k=1}^{n} \frac{1}{k} \underset{n \to +\infty}{\sim} \ln(n) \)</div>
-        <div class="formule-defilante f4">\( \sum_{n=1}^{+\infty} \frac{1}{n^2} = \frac{\pi^2}{6} \)</div>
-        <div class="formule-defilante f5">\( \int \ln(x) dx = x \ln(x) - x \)</div>
+        <div class="formule-defilante f1">\( \boldsymbol{\sum_{k=1}^{n} k^2 = \frac{n(n+1)(2n+1)}{6}} \)</div>
+        <div class="formule-defilante f2">\( \boldsymbol{\int_{-\infty}^{+\infty} e^{-x^2} dx = \sqrt{\pi}} \)</div>
+        <div class="formule-defilante f3">\( \boldsymbol{\sum_{k=1}^{n} \frac{1}{k} \underset{n \to +\infty}{\sim} \ln(n)} \)</div>
+        <div class="formule-defilante f4">\( \boldsymbol{\sum_{n=1}^{+\infty} \frac{1}{n^2} = \frac{\pi^2}{6}} \)</div>
+        <div class="formule-defilante f5">\( \boldsymbol{\int \ln(x) dx = x \ln(x) - x} \)</div>
     </div>
 
-    
-    <!-- Annuaire -->
+    <!-- Section Annuaire -->
     <nav class="navbar">
-        <ul class="nav-links">
+        <!-- Bouton menu (visible uniquement sur téléphone) -->
+        <button type="button" class="menu-burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="menu-principal">
             <li><a href="index.html">ACCUEIL</a></li>
-            <li><a href="qcm.html">A propos de moi</a></li>
-            <li><a href="fiches.html">FICHES</a></li>
-            <li><a href="eleves.html">Reservé à mes élèves</a></li>
-            <li><a href="avis.html">Avis</a></li>
+            <li><a href="#a-propos">À PROPOS</a></li>
+            <li><a href="#tarifs">TARIFS</a></li>
+            <li><a href="#avis">AVIS</a></li>
             <li><a href="#contact">CONTACT</a></li>
+            <li><a href="Fiches.html" class="lien-special"><i class="fas fa-file-pdf"></i> MES FICHES</a></li>
+            <li><a href="eleves.html" class="lien-special lien-plein"><i class="fas fa-lock"></i> Réservé à mes élèves</a></li>
         </ul>
         <div class="logo">MITHUSHAN <span class="vert">MAYURAN</span></div>
     </nav>
 
-    <!-- Page Accueil -->
+    <!-- Section Accueil -->
     <div class="presentation-container">
-        
+
         <!-- Le texte à gauche -->
         <div class="texte-presentation">
             <h1>MITHUSHAN <span class="vert">MAYURAN</span></h1>
@@ -48,43 +58,57 @@
         <div class="livre-ouvert">
             <div class="page couverture">MATHS</div>
             <div class="page p1"></div>
-            <div class="page p2"><div class="contenu-page">\[ \sum_{k=1}^{n} k^2 = \frac{n(n+1)(2n+1)}{6} \]</div></div>
-            <div class="page p3"><div class="contenu-page">\[ \int_{-\infty}^{+\infty} e^{-x^2} dx = \sqrt{\pi} \]</div></div>
-            <div class="page dos"><div class="contenu-page">\[ \sum_{k=1}^{n} \frac{1}{k} \underset{n \to +\infty}{\sim} \ln(n) \]<br>\[ \sum_{n=1}^{+\infty} \frac{1}{n^2} = \frac{\pi^2}{6} \]</div></div>
+            <div class="page p2">
+                <div class="contenu-page">\[ \sum_{k=1}^{n} k^2 = \frac{n(n+1)(2n+1)}{6} \]</div>
+            </div>
+            <div class="page p3">
+                <div class="contenu-page">
+                    \[ \int_{-\infty}^{+\infty} e^{-x^2} dx = \sqrt{\pi} \]
+                    \[ e^{i\pi} + 1 = 0 \]
+                    \[ (a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^k b^{n-k} \]
+                </div>
+            </div>
+            <div class="page dos">
+                <div class="contenu-page">
+                    \[ \sum_{k=1}^{n} \frac{1}{k} \underset{n \to +\infty}{\sim} \ln(n) \]
+                    \[ \sum_{n=1}^{+\infty} \frac{1}{n^2} = \frac{\pi^2}{6} \]
+                    \[ e^x = \sum_{n=0}^{+\infty} \frac{x^n}{n!} \]
+                </div>
+            </div>
         </div>
-        
+
     </div>
+
     <!-- Flèche animée -->
     <a href="#a-propos" class="fleche-bas"></a>
 
-    <!-- A propos de moi -->
+    <!-- Section À propos de moi -->
     <section id="a-propos" class="a-propos">
-
-    <!-- A propos de moi-->
-    <section class="a-propos">
         <h2 class="titre-section">À PROPOS DE MOI</h2>
+
+        <!-- Mon parcours -->
         <div class="parcours-container">
             <h3 class="vert">Mon Parcours</h3>
             <p>Je m'appelle <strong>Mithushan Mayuran</strong>, j'ai 21 ans et je suis actuellement étudiant ingénieur à Télécom Saint-Étienne.</p>
             <p>Après une classe préparatoire MPI au Lycée Saint-Louis, je poursuis mes études avec passion pour les mathématiques, la physique et l'informatique.</p>
         </div>
-        <!-- Blocs de compétences -->
+
         <!-- Blocs de compétences -->
         <div class="competences-grid">
-            <div class="competence-carte">
+            <div class="competence-carte reveal delay-1">
                 <div class="icone">∑</div>
                 <h4>Mathématiques</h4>
-                <p>Analyse, algèbre et probabilités</p>
+                <p>Collège,Lycée, Bac+1/+2</p>
             </div>
-            <div class="competence-carte">
+            <div class="competence-carte reveal delay-2">
                 <div class="icone">⚛️</div>
                 <h4>Physique-Chimie</h4>
-                <p>Mécanique, électromagnétisme et thermodynamique</p>
+                <p>Collège,Lycée, Bac+1/+2</p>
             </div>
-            <div class="competence-carte">
+            <div class="competence-carte reveal delay-3">
                 <div class="icone">&lt;/&gt;</div>
                 <h4>Informatique</h4>
-                <p>Développement, algorithmique et bases de données</p>
+                <p>Spécialité NSI, Licence informatique, CPGE</p>
             </div>
         </div>
     </section>
@@ -100,23 +124,55 @@
             </div>
 
             <div class="tarifs-list">
-                <!-- Case 1 : Présentiel -->
-                <div class="tarif-card">
-                    <h3>Présentiel — 20€ / heure</h3>
-                    <ul>
-                        <li>Je me déplace directement à votre domicile pour assurer le suivi et l'accompagnement.</li>
-                        <li>Explications détaillées, exercices d'application et méthodologie sur mesure.</li>
-                    </ul>
+                <!-- Carte 1 : Présentiel (le wrapper .reveal porte l'animation pour ne pas bloquer le survol de la carte) -->
+                <div class="reveal delay-1">
+                    <div class="tarif-card">
+                        <span class="tarif-badge">À domicile</span>
+                        <div class="tarif-icone"><i class="fas fa-house-chimney"></i></div>
+                        <h3>Présentiel</h3>
+                        <p class="tarif-prix"><span class="montant">20€</span><span class="unite">/ heure</span></p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Je me déplace directement à votre domicile pour assurer le suivi et l'accompagnement.</li>
+                            <li><i class="fas fa-check"></i> Explications détaillées, exercices d'application et méthodologie sur mesure.</li>
+                        </ul>
+                        <a href="#contact" class="tarif-btn">Réserver un cours <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
-                <!-- Case 2 : Distanciel -->
-                <div class="tarif-card">
-                    <h3>Distanciel — 15€ / heure</h3>
-                    <ul>
-                        <li>Cours dispensé avec un iPad et un stylet, ce qui me permet d'écrire de manière manuscrite en direct à l'écran.</li>
-                        <li>Partage d'écran fluide et envoi des notes manuscrites du cours en PDF à la fin de la séance.</li>
-                    </ul>
+                <!-- Carte 2 : Distanciel -->
+                <div class="reveal delay-2">
+                    <div class="tarif-card">
+                        <span class="tarif-badge">En ligne</span>
+                        <div class="tarif-icone"><i class="fas fa-laptop"></i></div>
+                        <h3>Distanciel</h3>
+                        <p class="tarif-prix"><span class="montant">15€</span><span class="unite">/ heure</span></p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Cours dispensé avec un iPad et un stylet, ce qui me permet d'écrire de manière manuscrite en direct à l'écran.</li>
+                            <li><i class="fas fa-check"></i> Partage d'écran fluide et envoi des notes manuscrites du cours en PDF à la fin de la séance.</li>
+                        </ul>
+                        <a href="#contact" class="tarif-btn">Réserver un cours <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Avis -->
+    <section id="avis" class="avis-section">
+        <div class="container">
+            <div class="carrousel-container">
+                <!-- Bouton Flèche Gauche -->
+                <button class="carrousel-btn" id="prev-btn">&#10094;</button>
+
+                <!-- Conteneur de l'avis actif -->
+                <div class="avis-card">
+                    <i class="fas fa-comment-dots quote-icon"></i>
+                    <p id="avis-texte" class="avis-texte">"Grâce aux cours de Mithushan, j'ai complètement remonté ma moyenne en maths en fin de trimestre !"</p>
+                    <h4 id="avis-auteur" class="avis-auteur">- Thomas, Élève en Terminale</h4>
+                </div>
+
+                <!-- Bouton Flèche Droite -->
+                <button class="carrousel-btn" id="next-btn">&#10095;</button>
             </div>
         </div>
     </section>
@@ -125,90 +181,78 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">CONTACT</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p>mithushan200503@gmail.com</p>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fas fa-phone"></i>
-                        <h3>Téléphone</h3>
-                        <p>+33 7 68 78 57 25</p>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Localisation</h3>
-                        <p>Saint-Étienne, France</p>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fab fa-linkedin"></i>
-                        <h3>LinkedIn</h3>
-                        <p>Mithushan Mayuran</p>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form action="https://formsubmit.co/ton.adresse@gmail.com" method="POST">
-                        <!-- Désactive le captcha et personnalise le titre du mail reçu -->
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_subject" value="Nouveau message depuis mon site de cours !">
+            <p class="contact-intro">Une question, envie de réserver un cours ? Choisis le moyen qui te convient, je réponds rapidement.</p>
 
-                        <div class="form-group">
-                            <input type="text" name="Nom" placeholder="Nom" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="Email" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="Sujet" placeholder="Sujet" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="Message" placeholder="Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Envoyer</button>
-                    </form>
-                </div>
+            <!-- Mes coordonnées : quatre boutons sur toute la largeur -->
+            <div class="contact-info">
+                <a href="mailto:mithushan200503@gmail.com" class="contact-card">
+                    <span class="contact-icone"><i class="fas fa-envelope"></i></span>
+                    <h3>Email</h3>
+                    <p>mithushan200503@gmail.com</p>
+                    <span class="contact-action">Écrire un mail <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="https://wa.me/33768785725" target="_blank" rel="noopener" class="contact-card">
+                    <span class="contact-icone"><i class="fab fa-whatsapp"></i></span>
+                    <h3>WhatsApp</h3>
+                    <p>+33 7 68 78 57 25</p>
+                    <span class="contact-action">Discuter <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Saint-%C3%89tienne%2C+France" target="_blank" rel="noopener" class="contact-card">
+                    <span class="contact-icone"><i class="fas fa-map-marker-alt"></i></span>
+                    <h3>Localisation</h3>
+                    <p>Saint-Étienne, France</p>
+                    <span class="contact-action">Voir sur la carte <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="https://www.linkedin.com/in/mithushan-mayuran-82177a327/" target="_blank" rel="noopener" class="contact-card">
+                    <span class="contact-icone"><i class="fab fa-linkedin-in"></i></span>
+                    <h3>LinkedIn</h3>
+                    <p>Mithushan Mayuran</p>
+                    <span class="contact-action">Voir mon profil <i class="fas fa-arrow-right"></i></span>
+                </a>
             </div>
         </div>
     </section>
-    
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const cursor = document.createElement('div');
-        cursor.className = 'custom-cursor';
-        cursor.style.cssText = `
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: #00ff88;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transition: transform 0.1s ease;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
-        `;
-        document.body.appendChild(cursor);
 
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
+    <!-- Pied de page -->
+    <footer class="pied-page">
+        <div class="pied-contenu">
 
-        // Fait grossir le rond vert au survol des liens et boutons
-        const links = document.querySelectorAll('a, button');
-        links.forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1.6)';
-            });
-            link.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-            });
-        });
-    });
-    </script>
-    
+            <!-- Identité -->
+            <div class="pied-colonne">
+                <div class="logo">MITHUSHAN <span class="vert">MAYURAN</span></div>
+                <p class="pied-texte">Cours particuliers de Maths, Physique et Informatique, en ligne ou à Saint-Étienne.</p>            </div>
+
+            <!-- Navigation -->
+            <div class="pied-colonne">
+                <h4 class="pied-titre">Navigation</h4>
+                <ul class="pied-liens">
+                    <li><a href="#a-propos">À propos</a></li>
+                    <li><a href="#tarifs">Tarifs</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="Fiches.html">Mes fiches</a></li>
+                </ul>
+            </div>
+
+            <!-- Réseaux / contact rapide -->
+            <div class="pied-colonne">
+                <h4 class="pied-titre">Me suivre</h4>
+                <div class="pied-icones">
+                    <a href="mailto:mithushan200503@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+33768785725" aria-label="Téléphone"><i class="fas fa-phone"></i></a>
+                    <a href="https://www.linkedin.com/in/mithushan-mayuran-82177a327/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bas du pied de page -->
+        <div class="pied-bas">
+            <p>&copy; 2026 Mithushan Mayuran. Tous droits réservés.</p>
+            <a href="#" class="retour-haut" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>

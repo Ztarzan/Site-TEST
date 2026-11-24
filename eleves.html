@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace élèves - Mithushan Mayuran</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="fiches.css">
+</head>
+<body>
+
+    <!-- BOUTON DE RETOUR AU SITE PRINCIPAL -->
+    <div class="retour-container">
+        <a href="index.html" class="btn-retour">
+            <i class="fas fa-arrow-left"></i> RETOUR AU SITE PRINCIPAL
+        </a>
+    </div>
+
+    <!-- ESPACE ÉLÈVES (à compléter) -->
+    <div class="container documents-container">
+        <h2 class="section-title">Espace élèves</h2>
+
+        <div class="doc-block">
+            <h3 class="doc-title">Accéder à mon espace</h3>
+            <p class="doc-description">
+                Saisissez le code personnel que je vous ai transmis pour accéder à votre page dédiée.
+            </p>
+
+            <div class="doc-actions">
+                <button type="button" id="btn-code" class="btn-pdf">
+                    <i class="fas fa-lock"></i> Entrer mon code
+                </button>
+            </div>
+
+            <!-- Formulaire du code (caché tant qu'on n'a pas cliqué sur le bouton) -->
+            <form id="form-code" class="code-form" hidden>
+                <input type="password" id="input-code" class="code-input" inputmode="numeric"
+                       autocomplete="off" placeholder="Votre code" aria-label="Code d'accès" required>
+                <button type="submit" class="btn-pdf">
+                    <i class="fas fa-arrow-right"></i> Valider
+                </button>
+                <p id="code-erreur" class="code-erreur" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
