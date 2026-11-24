@@ -49,9 +49,16 @@
 
         <!-- Le texte à gauche -->
         <div class="texte-presentation">
+            <p class="badge-accueil"><span class="badge-point"></span> Cours particuliers · Maths · Physique · Informatique</p>
             <h1>MITHUSHAN <span class="vert">MAYURAN</span></h1>
-            <p class="sous-titre">Étudiant en ingénierie</p>
-            <p>Etudiant en école d'ingénieur, donne des cours particuliers de Maths, Physique et Informatique</p>
+            <p class="sous-titre">Étudiant ingénieur à Télécom Saint-Étienne</p>
+            <p class="intro-accueil">
+                Passionné par les sciences, j'accompagne mes élèves avec une pédagogie qui a fait ses preuves&nbsp;:
+                des notions enfin comprises, une confiance retrouvée et des notes qui grimpent.
+            </p>
+            <p class="slogan">Osez viser le <span class="note-20">20</span> en sciences, on y va ensemble&nbsp;!</p>
+            <div class="boutons">
+                <a href="#contact" class="btn-vert">Réserver un cours <i class="fas fa-arrow-right"></i></a>            </div>
         </div>
 
         <!-- Le livre 3D à droite -->
@@ -98,8 +105,26 @@
             <!-- Mon parcours, à droite -->
             <div class="parcours-container">
                 <h3 class="vert">Mon Parcours</h3>
-                <p>Je m'appelle <strong>Mithushan Mayuran</strong>, j'ai 21 ans et je suis actuellement étudiant ingénieur à Télécom Saint-Étienne.</p>
-                <p>Après une classe préparatoire MPI au Lycée Saint-Louis, je poursuis mes études avec passion pour les mathématiques, la physique et l'informatique.</p>
+                <!-- Les étapes de mon parcours, sous forme de frise -->
+                <ul class="parcours-etapes">
+                    <li>
+                        <span class="etape-titre">Baccalauréat, mention Très Bien</span>
+                        Spécialités Mathématiques, Physique-Chimie et NSI (Numérique et Sciences Informatiques),
+                        avec la note de <strong class="vert">20/20</strong> à l'épreuve de mathématiques.
+                    </li>
+                    <li>
+                        <span class="etape-titre">Classes préparatoires scientifiques</span>
+                        MP2I puis MPI au Lycée Saint-Louis, suivies d'une MPI* au Lycée Paul-Valéry.
+                    </li>
+                    <li>
+                        <span class="etape-titre">École d'ingénieur</span>
+                        Actuellement étudiant ingénieur à Télécom Saint-Étienne.
+                    </li>
+                </ul>
+                <p class="parcours-conclusion">
+                    Ce parcours me permet d'accompagner les élèves en mathématiques, physique-chimie et informatique,
+                    <strong>du collège jusqu'au niveau Bac+2</strong>.
+                </p>
             </div>
         </div>
 
@@ -144,6 +169,7 @@
                         <ul>
                             <li><i class="fas fa-check"></i> Je me déplace directement à votre domicile pour assurer le suivi et l'accompagnement.</li>
                             <li><i class="fas fa-check"></i> Explications détaillées, exercices d'application et méthodologie sur mesure.</li>
+                            <li><i class="fas fa-check"></i> Un échange direct, idéal pour garder la concentration et corriger les erreurs sur la copie, en temps réel.</li>
                         </ul>
                         <a href="#contact" class="tarif-btn">Réserver un cours <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -151,14 +177,20 @@
 
                 <!-- Carte 2 : Distanciel -->
                 <div class="reveal delay-2">
-                    <div class="tarif-card">
-                        <span class="tarif-badge">En ligne</span>
+                    <div class="tarif-card tarif-favori">
+                        <span class="tarif-badge"><i class="fas fa-star"></i> Préféré des élèves</span>
                         <div class="tarif-icone"><i class="fas fa-laptop"></i></div>
                         <h3>Distanciel</h3>
                         <p class="tarif-prix"><span class="montant">15€</span><span class="unite">/ heure</span></p>
                         <ul>
-                            <li><i class="fas fa-check"></i> Cours dispensé avec un iPad et un stylet, ce qui me permet d'écrire de manière manuscrite en direct à l'écran.</li>
-                            <li><i class="fas fa-check"></i> Partage d'écran fluide et envoi des notes manuscrites du cours en PDF à la fin de la séance.</li>
+                            <li><i class="fas fa-check"></i> Le cours est rédigé à la main, en direct, sur iPad avec un stylet&nbsp;: une expérience très proche d'un cours en présentiel.</li>
+                            <li><i class="fas fa-check"></i> Une grande flexibilité dans le choix des horaires, sans aucun temps de trajet.</li>
+                            <li><i class="fas fa-check"></i>
+                                <!-- Le span garde le texte et le bouton ensemble, le bouton passe sous le texte -->
+                                <span>Un support de cours en PDF, clair et épuré, envoyé après chaque séance pour réviser quand l'élève le souhaite. Un aperçu est disponible dans l'onglet Mes fiches&nbsp;:
+                                    <a href="Fiches.html" class="lien-fiches"><i class="fas fa-file-pdf"></i> Voir un exemple <i class="fas fa-arrow-right fleche"></i></a>
+                                </span>
+                            </li>
                         </ul>
                         <a href="#contact" class="tarif-btn">Réserver un cours <i class="fas fa-arrow-right"></i></a>
                     </div>
