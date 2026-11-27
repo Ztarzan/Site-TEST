@@ -372,3 +372,72 @@ body {
 .code-oeil[aria-pressed="true"] {
     color: #00ff88;
 }
+
+/* ==========================================================================
+   PETITES CARTES DE FICHES CÔTE À CÔTE (pages élèves)
+   ========================================================================== */
+
+.fiches-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* 2 cartes ou plus par ligne */
+    gap: 20px;
+}
+
+/* Toute la carte est cliquable */
+.fiche-mini {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    text-decoration: none;
+    background: rgba(0, 255, 136, 0.04);
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.fiche-mini:hover {
+    border-color: #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+    transform: translateY(-3px);
+}
+
+.fiche-mini-icone {
+    font-size: 1.8rem;
+    color: #00ff88;
+}
+
+.fiche-mini-titre {
+    flex: 1;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.fiche-mini-action {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #00ff88;
+    white-space: nowrap;
+}
+
+/* Correctif : « Télécharger » passe sous le titre pour ne plus dépasser de la carte */
+.fiches-grille {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+}
+
+.fiche-mini {
+    min-width: 0;
+}
+
+.fiche-mini-texte {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0; /* Autorise le texte à se resserrer au lieu de déborder */
+}
+
+.fiche-mini-titre {
+    overflow-wrap: anywhere;
+}
