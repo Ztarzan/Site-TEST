@@ -36,8 +36,15 @@
 
             <!-- Formulaire du code (caché tant qu'on n'a pas cliqué sur le bouton) -->
             <form id="form-code" class="code-form" hidden>
-                <input type="password" id="input-code" class="code-input" inputmode="numeric"
-                       autocomplete="off" placeholder="Votre code" aria-label="Code d'accès" required>
+                <!-- Champ du code + bouton œil pour afficher / masquer la saisie -->
+                <div class="code-champ">
+                    <input type="password" id="input-code" class="code-input"
+                           autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false"
+                           placeholder="Votre code" aria-label="Code d'accès" required>
+                    <button type="button" id="code-oeil" class="code-oeil" aria-label="Afficher le code" aria-pressed="false">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
                 <button type="submit" class="btn-pdf">
                     <i class="fas fa-arrow-right"></i> Valider
                 </button>

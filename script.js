@@ -132,9 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 // --- ESPACE ÉLÈVES : ACCÈS PAR CODE ---
-// Associe chaque code à la page dédiée de l'élève (ajoutez une ligne par élève)
+// Associe chaque code à la page dédiée de l'élève (ajoutez une ligne par élève).
+// Écrire les codes en minuscules : la saisie est convertie en minuscules,
+// donc les majuscules tapées par l'élève ne comptent pas.
 const codesEleves = {
-    "Amine42": "eleve-amine.html"
+    "amine42": "eleve-amine.html",
+    "kajalvili2303": "eleve-kajalvili.html"
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -152,9 +155,22 @@ document.addEventListener('DOMContentLoaded', () => {
         inputCode.focus();
     });
 
+    // Bouton œil : affiche ou masque le code saisi
+    const oeil = document.getElementById('code-oeil');
+    if (oeil) {
+        oeil.addEventListener('click', () => {
+            const visible = inputCode.type === 'password';
+            inputCode.type = visible ? 'text' : 'password';
+            oeil.setAttribute('aria-pressed', String(visible));
+            oeil.setAttribute('aria-label', visible ? 'Masquer le code' : 'Afficher le code');
+            oeil.innerHTML = visible ? '<i class="fas fa-eye-slash"></i>' : '<i class="fas fa-eye"></i>';
+            inputCode.focus();
+        });
+    }
+
     formCode.addEventListener('submit', (e) => {
         e.preventDefault();
-        const page = codesEleves[inputCode.value.trim()];
+        const page = codesEleves[inputCode.value.trim().toLowerCase()];
         if (page) {
             window.location.href = page;
         } else {
